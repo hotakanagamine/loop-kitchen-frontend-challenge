@@ -7,6 +7,7 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'airbnb',
+    'prettier',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -17,6 +18,7 @@ module.exports = {
   },
   plugins: [
     'react',
+    'prettier',
   ],
   rules: {
     'react/react-in-jsx-scope': 'off',
