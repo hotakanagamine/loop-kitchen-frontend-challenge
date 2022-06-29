@@ -1,29 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
+import { green } from '@mui/material/colors';
+import {
+  createTheme,
+  responsiveFontSizes,
+  ThemeProvider,
+} from '@mui/material/styles';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import SignIn from './containers/pages/SignIn';
+
+const theme = responsiveFontSizes(
+  createTheme({
+    palette: {
+      primary: {
+        main: green[800],
+      },
+    },
+  }),
+);
+
+const App = () => (
+  <ThemeProvider theme={theme}>
+    <Router>
+      <Routes>
+        <Route path="/signin" element={<SignIn />} />
+      </Routes>
+    </Router>
+  </ThemeProvider>
+);
 
 export default App;
