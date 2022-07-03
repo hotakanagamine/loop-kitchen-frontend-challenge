@@ -1,21 +1,23 @@
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import CssBaseline from '@mui/material/CssBaseline';
-import Link from '@mui/material/Link';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
+import {
+  Grid,
+  Box,
+  CssBaseline,
+  Paper,
+  Avatar,
+  Link,
+  Typography,
+} from '@mui/material';
+import LockOutlinedIcon from '@mui/icons-material/LockClockOutlined';
 
-import Copyright from '../../../components/Copyright';
 import SignInForm from './SignInForm';
+import Copyright from '../../../components/Copyright';
+
 import { getRandomInt } from '../../../utils';
 
 const imageNo = getRandomInt(10);
 
-const SignInSide = () => {
-  const handleSubmit = (event) => {
+const SignInPage = () => {
+  const handleLogin = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
@@ -43,7 +45,16 @@ const SignInSide = () => {
           backgroundPosition: 'center',
         }}
       />
-      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+      <Grid
+        item
+        xs={12}
+        sm={8}
+        md={5}
+        component={Paper}
+        elevation={6}
+        square
+        px={{ md: '16px', lg: '32px' }}
+      >
         <Box
           sx={{
             my: 8,
@@ -59,7 +70,7 @@ const SignInSide = () => {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <SignInForm handleSubmit={handleSubmit} />
+          <SignInForm handleSubmit={handleLogin} />
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
@@ -79,4 +90,4 @@ const SignInSide = () => {
   );
 };
 
-export default SignInSide;
+export default SignInPage;

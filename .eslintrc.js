@@ -4,7 +4,11 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'prettier'],
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+    'plugin:prettier/recommended',
+  ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -18,19 +22,9 @@ module.exports = {
       'error',
       {
         tabWidth: 2,
-        useTabs: false,
         semi: true,
         singleQuote: true,
-        jsxSingleQuote: false,
-        trailingComma: 'all',
-        bracketSpacing: true,
-        bracketLine: false,
-        arrowParens: 'always',
-        parser: 'flow',
-        requirePragma: false,
-        endOfLine: 'auto',
-        singleAttributePerLine: false,
-        htmlWhitespaceSensitivity: 'ignore',
+        trailingComma: 'es5',
       },
     ],
     'no-unused-vars': 'warn',
@@ -46,6 +40,7 @@ module.exports = {
       },
     ],
     'jsx-a11y/anchor-is-valid': 'off',
+    'import/prefer-default-export': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',
