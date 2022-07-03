@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import {
   Grid,
   Box,
@@ -17,11 +18,13 @@ import { fetchCredentials } from '../../../services/auth.service';
 import { getRandomInt } from '../../../utils';
 
 import { useSnack } from '../../../providers/ToastProvider';
+import { RouteLinks } from '../../../utils/constants';
 
 const imageNo = getRandomInt(10);
 
 const SignInPage = () => {
   const { message } = useSnack();
+  const navigate = useNavigate();
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -37,6 +40,7 @@ const SignInPage = () => {
         message.error('Invalid username and password');
       } else {
         message.success('Sign in successfully');
+        navigate(RouteLinks.Home);
       }
     } catch (error) {
       message.error(error.message);

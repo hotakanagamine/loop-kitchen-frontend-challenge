@@ -11,3 +11,8 @@ export const MESSAGES = {
     },
   },
 };
+
+export const RouteLinks = {
+  Home: '/',
+  SignIn: '/signin',
+};
