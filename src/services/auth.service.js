@@ -9,6 +9,5 @@ export const fetchCredentials = async () => {
     },
   });
   const data = await response.json();
-  const credentials = data.results;
-  return credentials;
+  return data;
 };

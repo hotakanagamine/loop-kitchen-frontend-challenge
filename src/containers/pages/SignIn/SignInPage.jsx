@@ -16,16 +16,31 @@ import { fetchCredentials } from '../../../services/auth.service';
 
 import { getRandomInt } from '../../../utils';
 
+import { useSnack } from '../../../providers/ToastProvider';
+
 const imageNo = getRandomInt(10);
 
 const SignInPage = () => {
+  const { message } = useSnack();
+
   const handleLogin = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    try {
+      const { records } = await fetchCredentials();
+      const user = records.find(
+        (record) =>
+          record.fields.username === data.get('username') &&
+          record.fields.password === data.get('password')
+      );
+      if (!user) {
+        message.error('Invalid username and password');
+      } else {
+        message.success('Sign in successfully');
+      }
+    } catch (error) {
+      message.error(error.message);
+    }
   };
 
   return (

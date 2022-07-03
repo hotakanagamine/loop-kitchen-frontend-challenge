@@ -11,8 +11,6 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 });
 
 const AppSnackBar = () => {
-  const theme = useTheme();
-
   const {
     snack: { open, message, status },
     hide,
@@ -36,7 +34,7 @@ const AppSnackBar = () => {
       <Alert
         onClose={handleClose}
         severity={status}
-        sx={{ width: '100%', fontSize: theme.typography.fontSizeCustom[16] }}
+        sx={{ width: '100%', fontSize: '16px' }}
       >
         {message}
       </Alert>
