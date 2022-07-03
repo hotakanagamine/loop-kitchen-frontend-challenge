@@ -1,16 +1,10 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
 import Provider from './providers';
+import AppRoutes from './Routes';
 import AppSnackBar from './components/SnackBar';
-import SignIn from './containers/pages/SignIn';
 
 const App = () => (
   <Provider>
-    <Router>
-      <Routes>
-        <Route path="/signin" element={<SignIn />} />
-      </Routes>
-    </Router>
+    <AppRoutes />
     <AppSnackBar />
   </Provider>
 );
