@@ -118,8 +118,9 @@ const PageLayout = ({ pageName, children }) => {
         component="main"
         sx={{
           flexGrow: 1,
-          mt: 8,
           p: 3,
+          pt: 10,
+          maxHeight: '100vh',
           width: { sm: `calc(100% - ${drawerWidth}px)` },
         }}
       >
