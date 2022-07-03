@@ -12,12 +12,14 @@ import LockOutlinedIcon from '@mui/icons-material/LockClockOutlined';
 import SignInForm from './SignInForm';
 import Copyright from '../../../components/Copyright';
 
+import { fetchCredentials } from '../../../services/auth.service';
+
 import { getRandomInt } from '../../../utils';
 
 const imageNo = getRandomInt(10);
 
 const SignInPage = () => {
-  const handleLogin = (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({

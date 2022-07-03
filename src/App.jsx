@@ -1,31 +1,18 @@
-import { green } from '@mui/material/colors';
-import {
-  createTheme,
-  responsiveFontSizes,
-  ThemeProvider,
-} from '@mui/material/styles';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+import Provider from './providers';
+import AppSnackBar from './components/SnackBar';
 import SignIn from './containers/pages/SignIn';
 
-const theme = responsiveFontSizes(
-  createTheme({
-    palette: {
-      primary: {
-        main: green[800],
-      },
-    },
-  })
-);
-
 const App = () => (
-  <ThemeProvider theme={theme}>
+  <Provider>
     <Router>
       <Routes>
         <Route path="/signin" element={<SignIn />} />
       </Routes>
     </Router>
-  </ThemeProvider>
+    <AppSnackBar />
+  </Provider>
 );
 
 export default App;

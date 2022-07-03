@@ -1,7 +1,7 @@
 import { MESSAGES } from '../utils/constants';
 
-const fetchWithErrorHandler = async (URL) => {
-  const response = await fetch(URL);
+const fetchWithErrorHandler = async (URL, params) => {
+  const response = await fetch(URL, params);
   if (!response.ok) {
     switch (response.status) {
       case 401:
