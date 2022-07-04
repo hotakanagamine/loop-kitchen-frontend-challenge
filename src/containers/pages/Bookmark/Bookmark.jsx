@@ -30,7 +30,7 @@ const Home = () => {
   }, [added]);
 
   return (
-    <PageLayout pageName="Home Page">
+    <PageLayout pageName="Bookmarks">
       <Stack sx={{ height: '100%' }}>
         <Box sx={{ height: '100%', overflow: 'auto', mt: 2 }}>
           <List>
