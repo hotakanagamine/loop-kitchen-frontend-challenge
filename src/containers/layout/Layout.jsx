@@ -17,7 +17,7 @@ import BookmarkIcon from '@mui/icons-material/Bookmark';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
-import { RouteLinks } from '../../utils/constants';
+import { ROUTES } from '../../utils/constants';
 
 const drawerWidth = 240;
 
@@ -33,7 +33,7 @@ const PageLayout = ({ pageName, children }) => {
     <div>
       <Divider />
       <List>
-        <ListItem disablePadding onClick={() => navigate(RouteLinks.Home)}>
+        <ListItem disablePadding onClick={() => navigate(ROUTES.HOME)}>
           <ListItemButton>
             <ListItemIcon>
               <HomeIcon />
@@ -41,7 +41,7 @@ const PageLayout = ({ pageName, children }) => {
             <ListItemText>Home</ListItemText>
           </ListItemButton>
         </ListItem>
-        <ListItem disablePadding onClick={() => navigate(RouteLinks.Bookmark)}>
+        <ListItem disablePadding onClick={() => navigate(ROUTES.BOOKMARK)}>
           <ListItemButton>
             <ListItemIcon>
               <BookmarkIcon />

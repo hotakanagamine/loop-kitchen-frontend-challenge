@@ -1,8 +1,6 @@
 import React from 'react';
 import Snackbar from '@mui/material/Snackbar';
-import MuiAlert, { AlertProps } from '@mui/material/Alert';
-import { Theme } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import MuiAlert from '@mui/material/Alert';
 
 import { useSnack } from '../../providers/ToastProvider';
 

@@ -1,7 +1,7 @@
 import fetchWithErrorHandler from '.';
 
 export const fetchCredentials = async () => {
-  const token = process.env.REACT_APP_API_TOKEN_CREDENTIALS ?? '';
+  const token = process.env.REACT_APP_API_TOKEN ?? '';
   const url = process.env.REACT_APP_API_URL_CREDENTIALS ?? '';
   const response = await fetchWithErrorHandler(url, {
     headers: {

@@ -1,3 +1,8 @@
+export const COMPANY = {
+  URL: 'https://loopkitchen.xyz/',
+  NAME: 'LoopKitchen',
+};
+
 export const MESSAGES = {
   ERRORS: {
     LOADING_QUIZZES: 'Failed to get problems!',
@@ -12,8 +17,8 @@ export const MESSAGES = {
   },
 };
 
-export const RouteLinks = {
-  Home: '/',
-  SignIn: '/signin',
-  Bookmark: '/bookmark',
+export const ROUTES = {
+  HOME: '/home',
+  SIGNIN: '/signin',
+  BOOKMARK: '/bookmark',
 };

@@ -18,7 +18,7 @@ import { fetchCredentials } from '../../../services/auth.service';
 import { getRandomInt } from '../../../utils';
 
 import { useSnack } from '../../../providers/ToastProvider';
-import { RouteLinks } from '../../../utils/constants';
+import { ROUTES } from '../../../utils/constants';
 
 const imageNo = getRandomInt(10);
 
@@ -40,7 +40,7 @@ const SignInPage = () => {
         message.error('Invalid username and password');
       } else {
         message.success('Sign in successfully');
-        navigate(RouteLinks.Home);
+        navigate(ROUTES.HOME);
       }
     } catch (error) {
       message.error(error.message);
