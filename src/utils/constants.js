@@ -15,6 +15,12 @@ export const MESSAGES = {
       UNKNOWN: 'Unknown Error!',
     },
   },
+  APP: {
+    AUTH: {
+      INVALID_CREDENTIALS: 'Invalid username and password!',
+      SUCCESS: 'Sign in successfully!',
+    },
+  },
 };
 
 export const ROUTES = {

@@ -12,13 +12,11 @@ import LockOutlinedIcon from '@mui/icons-material/LockClockOutlined';
 
 import SignInForm from './SignInForm';
 import Copyright from '../../../components/Copyright';
+import { useSnack } from '../../../providers/ToastProvider';
 
 import { fetchCredentials } from '../../../services/auth.service';
-
 import { getRandomInt } from '../../../utils';
-
-import { useSnack } from '../../../providers/ToastProvider';
-import { ROUTES } from '../../../utils/constants';
+import { MESSAGES, ROUTES } from '../../../utils/constants';
 
 const imageNo = getRandomInt(10);
 
@@ -37,9 +35,9 @@ const SignInPage = () => {
           record.fields.password === data.get('password')
       );
       if (!user) {
-        message.error('Invalid username and password');
+        message.error(MESSAGES.APP.AUTH.INVALID_CREDENTIALS);
       } else {
-        message.success('Sign in successfully');
+        message.success(MESSAGES.APP.AUTH.SUCCESS);
         navigate(ROUTES.HOME);
       }
     } catch (error) {
