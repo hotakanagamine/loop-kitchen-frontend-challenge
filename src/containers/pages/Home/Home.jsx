@@ -65,14 +65,16 @@ const Home = () => {
         </Box>
         <Box sx={{ height: 'calc(100% - 72px)', overflow: 'auto', mt: 2 }}>
           <List>
-            {added.map((item) => (
-              <Restaurant
-                key={item.id}
-                restaurant={item}
-                onBookmark={() => onBookmark(item)}
-                onRemove={() => onRemove(item)}
-              />
-            ))}
+            {added
+              .filter((item) => !item.isBookmarked)
+              .map((item) => (
+                <Restaurant
+                  key={item.id}
+                  restaurant={item}
+                  onBookmark={() => onBookmark(item)}
+                  onRemove={() => onRemove(item)}
+                />
+              ))}
           </List>
         </Box>
       </Stack>
