@@ -1,21 +1,27 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
-import HomeIcon from '@mui/icons-material/Home';
-import BookmarkIcon from '@mui/icons-material/Bookmark';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+import {
+  AppBar,
+  CssBaseline,
+  Box,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Toolbar,
+  Typography,
+} from '@mui/material';
+
+import {
+  Menu as MenuIcon,
+  Home as HomeIcon,
+  Bookmark as BookmarkIcon,
+  Logout as LogoutIcon,
+} from '@mui/icons-material';
 
 import { ROUTES } from '../../utils/constants';
 
@@ -31,7 +37,6 @@ const PageLayout = ({ pageName, children }) => {
 
   const drawer = (
     <div>
-      <Divider />
       <List>
         <ListItem disablePadding onClick={() => navigate(ROUTES.HOME)}>
           <ListItemButton>
@@ -47,6 +52,18 @@ const PageLayout = ({ pageName, children }) => {
               <BookmarkIcon />
             </ListItemIcon>
             <ListItemText>Bookmarks</ListItemText>
+          </ListItemButton>
+        </ListItem>
+        <Divider />
+        <ListItem
+          sx={{ margin: 'auto' }}
+          onClick={() => navigate(ROUTES.SIGNIN)}
+        >
+          <ListItemButton>
+            <ListItemIcon>
+              <LogoutIcon />
+            </ListItemIcon>
+            <ListItemText>Log out</ListItemText>
           </ListItemButton>
         </ListItem>
       </List>
